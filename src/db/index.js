@@ -13,7 +13,7 @@ const options = {
 exports.connect = () => {
   mongoose.Promise = global.Promise;
 
-  console.log('connecting to db:', proccess.env.NODE_ENV);
+  console.log('connecting to db:', process.env.NODE_ENV);
 
   // Different database configurations based on environment
   switch (process.env.NODE_ENV) {
