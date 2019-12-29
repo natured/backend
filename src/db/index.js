@@ -20,15 +20,18 @@ exports.connect = () => {
     case 'prod': {
       mongoose.connect(process.env.MONGODB_URI, options);
       console.log('connected to production database via MONGODB_URI');
+      break;
     }
 
     case 'test': {
       // allow testing suite to handle database connection
+      break;
     }
 
     default: {
       mongoose.connect(`mongodb://localhost:27017/${DB_NAME}`, options);
       console.log(`connected to database: ${DB_NAME}`);
+      break;
     }
   }
 };
