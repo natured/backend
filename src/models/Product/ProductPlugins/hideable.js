@@ -1,5 +1,3 @@
-const Category = require('../../category');
-
 // plugin for allowing product to be shown when browsing or not
 module.exports = function (Product) {
   // adds show field
@@ -11,10 +9,7 @@ module.exports = function (Product) {
    */
   Product.methods.toggleVisibility = async function (show) {
     this.show = show;
-    await this.save();
-
-    await Category.calculateProducts(this.category.id);
-    return this;
+    return this.save();
   };
 
   // toggles the show flag by id

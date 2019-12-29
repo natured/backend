@@ -1,5 +1,3 @@
-
-
 // plugin for allowing product to be subscribed or not
 module.exports = function (Product) {
   Product.pre('find', function () {

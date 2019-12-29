@@ -5,6 +5,7 @@ const morgan = require('morgan');
 
 const database = require('../db');
 const routes = require('../routes');
+const middleware = require('../middleware');
 
 // Create application
 const app = express();
@@ -13,6 +14,7 @@ const app = express();
 database.connect();
 
 // Tooling for incoming requests (cross-origin, parsing JSON, etc.)
+app.use(middleware.favicon);
 app.use(cors());
 app.use(bodyParser.json());
 app.use(morgan('tiny'));

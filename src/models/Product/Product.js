@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const hasPrice = require('../pricing/hasPrice');
-const plugins = require('./ProductPlugins/plugins');
+// const hasPrice = require('../pricing/hasPrice');
+const plugins = require('./ProductPlugins');
 
 const Product = new mongoose.Schema({
   name: { type: String, required: true },
@@ -14,13 +14,12 @@ const Product = new mongoose.Schema({
     nutritionalLabel: { type: String },
   },
   priority: Number,
-  foodmaker: { type: mongoose.Schema.Types.ObjectId, ref: 'foodmaker', required: true, autopopulate: true },
+  // foodmaker: { type: mongoose.Schema.Types.ObjectId, ref: 'foodmaker', required: true, autopopulate: true },
   category: { type: mongoose.Schema.Types.ObjectId, ref: 'category', required: true, autopopulate: true },
   availability: { type: mongoose.Schema.Types.Mixed },
-  // tags: [{ type: mongoose.Schema.Types.ObjectId, ref: 'tag' }],
 }, { toObject: { virtuals: true }, toJSON: { virtuals: true }, timestamps: true });
 
-Product.plugin(hasPrice);
+// Product.plugin(hasPrice);
 plugins.forEach(plugin => Product.plugin(plugin));
 
 
