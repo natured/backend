@@ -16,7 +16,7 @@ exports.connect = () => {
   // Different database configurations based on environment
   switch (process.env.NODE_ENV) {
     case 'prod': {
-      mongoose.connect(process.env.DB_URI, options);
+      mongoose.connect(process.env.MONGODB_URI, options);
     }
 
     case 'test': {
