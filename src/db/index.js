@@ -17,6 +17,7 @@ exports.connect = () => {
   switch (process.env.NODE_ENV) {
     case 'prod': {
       mongoose.connect(process.env.MONGODB_URI, options);
+      console.log('connected to production database via MONGODB_URI');
     }
 
     case 'test': {
