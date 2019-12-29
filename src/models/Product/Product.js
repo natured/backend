@@ -14,7 +14,7 @@ const Product = new mongoose.Schema({
     nutritionalLabel: { type: String },
   },
   priority: Number,
-  // foodmaker: { type: mongoose.Schema.Types.ObjectId, ref: 'foodmaker', required: true, autopopulate: true },
+  foodmaker: { type: mongoose.Schema.Types.ObjectId, ref: 'foodmaker', required: true, autopopulate: true },
   category: { type: mongoose.Schema.Types.ObjectId, ref: 'category', required: true, autopopulate: true },
   availability: { type: mongoose.Schema.Types.Mixed },
 }, { toObject: { virtuals: true }, toJSON: { virtuals: true }, timestamps: true });

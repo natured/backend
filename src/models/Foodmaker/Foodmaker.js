@@ -7,7 +7,7 @@ const Foodmaker = new mongoose.Schema({
   img: { type: String },
   location: { type: String, required: true },
   description: { type: String, required: true },
-}, { toObject: { virtuals: true }, toJSON: { virtuals: true } });
+});
 
 const plugins = [natured];
 plugins.forEach(plugin => Foodmaker.plugin(plugin));
