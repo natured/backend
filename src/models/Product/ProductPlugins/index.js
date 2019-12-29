@@ -6,14 +6,16 @@ const subscribable = require('./subscribable');
 const populateBreadcrumbs = require('./populateBreadcrumbs');
 const recentlyAdded = require('./recentlyAdded');
 const hasPrice = require('./hasPrice');
+const query = require('./query');
 
 module.exports = [
   autopopulate,
   paginate,
-  hideable,
+  query,
   hasPrice,
   subscribable,
   populateBreadcrumbs,
   recentlyAdded, //***
+  hideable,
   natured, // note: this has to go last
 ];

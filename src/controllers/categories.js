@@ -12,5 +12,8 @@ module.exports = {
     res.send(await Category.find({ parent: null }).sort({ priority: 'ascending' }));
   },
 
-  // Fetches category by slug
+  // Gets single category by its slug
+  bySlug: async (req, res) => {
+    res.send(await Category.findOne({ slug: req.params.slug }));
+  },
 };

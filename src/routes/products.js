@@ -6,5 +6,9 @@ const { ProductsController } = require('../controllers');
 router.get('/recently-added', async(ProductsController.recentlyAdded));
 
 
+// Route to retrieve page of recently added products
+router.get('/byCategory/:categorySlug', async(ProductsController.byCategory));
+
+
 
 module.exports = router;
