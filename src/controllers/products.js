@@ -12,4 +12,13 @@ module.exports = {
     res.send(await Product.byCategory(req.params.categorySlug));
   },
 
+  // Fetches products for a foodmaker by foodmaker id
+  byFoodmaker: async (req, res) => {
+    res.send(await Product.find({ ...req.query, foodmaker: req.params.foodmakerId }));
+  },
+
+  // Fetches a single product by foodmaker + product slugs
+  bySlugs: async (req, res) => {
+    res.send(await Product.findBySlugs(req.params.productSlug, req.params.foodmakerSlug));
+  }
 };
